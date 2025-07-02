@@ -163,7 +163,7 @@ function App() {
           {/* Video */}
           {videos.length > 0 && (
             <div style={{ marginBottom: '20px' }}>
-              <h3 style={{ color: '#ef4444', marginBottom: '10px' }}>🎥 Video ({videos.length})</h3>
+              <h3 style={{ color: '#ef4444', marginBottom: '10px' }}> Video ({videos.length})</h3>
               {videos.map((filename, index) => (
                 <div key={`vid-${index}`} style={{
                   backgroundColor: '#1e2124',
@@ -175,7 +175,7 @@ function App() {
                   justifyContent: 'space-between',
                   alignItems: 'center'
                 }}>
-                  <span style={{ color: '#ffffff', fontSize: '14px' }}>📎 {filename}</span>
+                  <span style={{ color: '#ffffff', fontSize: '14px' }}> {filename}</span>
                   <span style={{ 
                     padding: '2px 8px', 
                     borderRadius: '4px', 
@@ -235,7 +235,7 @@ function App() {
                   justifyContent: 'space-between',
                   alignItems: 'center'
                 }}>
-                  <span style={{ color: '#ffffff', fontSize: '14px' }}>📎 {filename}</span>
+                  <span style={{ color: '#ffffff', fontSize: '14px' }}> {filename}</span>
                   <span style={{ 
                     padding: '2px 8px', 
                     borderRadius: '4px', 
