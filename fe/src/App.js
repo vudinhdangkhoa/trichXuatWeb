@@ -71,7 +71,7 @@ function App() {
         width: '100%'
       }}>
         <h2 style={{ color: '#61dafb', marginBottom: '15px' }}>
-          📊 Kết quả trích xuất
+           Kết quả trích xuất
         </h2>
         
         {/* Thông tin tổng quan */}
@@ -82,17 +82,17 @@ function App() {
           marginBottom: '20px'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-            <span style={{ color: '#ffffff' }}>📁 Tổng số file:</span>
+            <span style={{ color: '#ffffff' }}> Tổng số file:</span>
             <span style={{ color: '#4ade80', fontWeight: 'bold' }}>{totalFiles}</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-            <span style={{ color: '#ffffff' }}>🌐 URL đã trích xuất:</span>
+            <span style={{ color: '#ffffff' }}> URL đã trích xuất:</span>
             <span style={{ color: '#60a5fa', fontSize: '12px', maxWidth: '400px', overflow: 'hidden', textOverflow: 'ellipsis' }}>
               {url}
             </span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span style={{ color: '#ffffff' }}>✅ Trạng thái:</span>
+            <span style={{ color: '#ffffff' }}> Trạng thái:</span>
             <span style={{ color: '#4ade80', fontWeight: 'bold' }}>
               {data.success ? 'Thành công' : 'Thất bại'}
             </span>
@@ -107,22 +107,22 @@ function App() {
           marginBottom: '20px' 
         }}>
           <div style={{ backgroundColor: '#1e2124', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
-            <div style={{ color: '#f59e0b', fontSize: '24px', marginBottom: '5px' }}>🖼️</div>
+            <div style={{ color: '#f59e0b', fontSize: '24px', marginBottom: '5px' }}>ảnh</div>
             <div style={{ color: '#ffffff', fontSize: '14px' }}>Hình ảnh</div>
             <div style={{ color: '#f59e0b', fontSize: '20px', fontWeight: 'bold' }}>{images.length}</div>
           </div>
           <div style={{ backgroundColor: '#1e2124', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
-            <div style={{ color: '#ef4444', fontSize: '24px', marginBottom: '5px' }}>🎥</div>
+            <div style={{ color: '#ef4444', fontSize: '24px', marginBottom: '5px' }}>video</div>
             <div style={{ color: '#ffffff', fontSize: '14px' }}>Video</div>
             <div style={{ color: '#ef4444', fontSize: '20px', fontWeight: 'bold' }}>{videos.length}</div>
           </div>
           <div style={{ backgroundColor: '#1e2124', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
-            <div style={{ color: '#8b5cf6', fontSize: '24px', marginBottom: '5px' }}>🎵</div>
+            <div style={{ color: '#8b5cf6', fontSize: '24px', marginBottom: '5px' }}>âm thanh</div>
             <div style={{ color: '#ffffff', fontSize: '14px' }}>Âm thanh</div>
             <div style={{ color: '#8b5cf6', fontSize: '20px', fontWeight: 'bold' }}>{audios.length}</div>
           </div>
           <div style={{ backgroundColor: '#1e2124', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
-            <div style={{ color: '#10b981', fontSize: '24px', marginBottom: '5px' }}>📄</div>
+            <div style={{ color: '#10b981', fontSize: '24px', marginBottom: '5px' }}>văn bản</div>
             <div style={{ color: '#ffffff', fontSize: '14px' }}>Văn bản</div>
             <div style={{ color: '#10b981', fontSize: '20px', fontWeight: 'bold' }}>{texts.length}</div>
           </div>
@@ -133,7 +133,7 @@ function App() {
           {/* Hình ảnh */}
           {images.length > 0 && (
             <div style={{ marginBottom: '20px' }}>
-              <h3 style={{ color: '#f59e0b', marginBottom: '10px' }}>🖼️ Hình ảnh ({images.length})</h3>
+              <h3 style={{ color: '#f59e0b', marginBottom: '10px' }}> Hình ảnh ({images.length})</h3>
               {images.map((filename, index) => (
                 <div key={`img-${index}`} style={{
                   backgroundColor: '#1e2124',
@@ -145,7 +145,7 @@ function App() {
                   justifyContent: 'space-between',
                   alignItems: 'center'
                 }}>
-                  <span style={{ color: '#ffffff', fontSize: '14px' }}>📎 {filename}</span>
+                  <span style={{ color: '#ffffff', fontSize: '14px' }}> {filename}</span>
                   <span style={{ 
                     padding: '2px 8px', 
                     borderRadius: '4px', 
@@ -153,7 +153,7 @@ function App() {
                     color: 'white', 
                     fontSize: '12px' 
                   }}>
-                    ✅ Thành công
+                     Thành công
                   </span>
                 </div>
               ))}
@@ -183,7 +183,7 @@ function App() {
                     color: 'white', 
                     fontSize: '12px' 
                   }}>
-                    ✅ Thành công
+                     Thành công
                   </span>
                 </div>
               ))}
@@ -193,7 +193,7 @@ function App() {
           {/* Âm thanh */}
           {audios.length > 0 && (
             <div style={{ marginBottom: '20px' }}>
-              <h3 style={{ color: '#8b5cf6', marginBottom: '10px' }}>🎵 Âm thanh ({audios.length})</h3>
+              <h3 style={{ color: '#8b5cf6', marginBottom: '10px' }}> Âm thanh ({audios.length})</h3>
               {audios.map((filename, index) => (
                 <div key={`aud-${index}`} style={{
                   backgroundColor: '#1e2124',
@@ -205,7 +205,7 @@ function App() {
                   justifyContent: 'space-between',
                   alignItems: 'center'
                 }}>
-                  <span style={{ color: '#ffffff', fontSize: '14px' }}>📎 {filename}</span>
+                  <span style={{ color: '#ffffff', fontSize: '14px' }}> {filename}</span>
                   <span style={{ 
                     padding: '2px 8px', 
                     borderRadius: '4px', 
@@ -213,7 +213,7 @@ function App() {
                     color: 'white', 
                     fontSize: '12px' 
                   }}>
-                    ✅ Thành công
+                     Thành công
                   </span>
                 </div>
               ))}
@@ -223,7 +223,7 @@ function App() {
           {/* Văn bản */}
           {texts.length > 0 && (
             <div style={{ marginBottom: '20px' }}>
-              <h3 style={{ color: '#10b981', marginBottom: '10px' }}>📄 Văn bản ({texts.length})</h3>
+              <h3 style={{ color: '#10b981', marginBottom: '10px' }}> Văn bản ({texts.length})</h3>
               {texts.map((filename, index) => (
                 <div key={`txt-${index}`} style={{
                   backgroundColor: '#1e2124',
@@ -243,7 +243,7 @@ function App() {
                     color: 'white', 
                     fontSize: '12px' 
                   }}>
-                    ✅ Thành công
+                     Thành công
                   </span>
                 </div>
               ))}
@@ -260,7 +260,7 @@ function App() {
             borderRadius: '6px',
             color: '#ffffff'
           }}>
-            💬 {data.message}
+             {data.message}
           </div>
         )}
       </div>
@@ -273,7 +273,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         
         <h1 style={{ marginBottom: '30px', color: '#61dafb' }}>
-          🔍 Công cụ trích xuất nội dung Web
+           Công cụ trích xuất nội dung Web
         </h1>
         
         <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
@@ -288,7 +288,7 @@ function App() {
               type="url"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              placeholder="🌐 Nhập URL cần trích xuất (vd: https://example.com)"
+              placeholder=" Nhập URL cần trích xuất (vd: https://example.com)"
               style={{
                 padding: '12px 16px',
                 width: '400px',
@@ -315,7 +315,7 @@ function App() {
                 transition: 'all 0.3s ease'
               }}
             >
-              {loading ? '⏳ Đang xử lý...' : '🚀 Trích xuất'}
+              {loading ? ' Đang xử lý...' : ' Trích xuất'}
             </button>
           </div>
         </form>
@@ -327,7 +327,7 @@ function App() {
             borderRadius: '8px',
             marginBottom: '20px'
           }}>
-            <p style={{ margin: 0, color: '#ffffff' }}>⏳ Đang tải dữ liệu...</p>
+            <p style={{ margin: 0, color: '#ffffff' }}> Đang tải dữ liệu...</p>
           </div>
         )}
         
@@ -338,7 +338,7 @@ function App() {
             borderRadius: '8px',
             marginBottom: '20px'
           }}>
-            <p style={{ margin: 0, color: '#ffffff' }}>❌ Lỗi: {error}</p>
+            <p style={{ margin: 0, color: '#ffffff' }}> Lỗi: {error}</p>
           </div>
         )}
         
