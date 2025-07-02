@@ -1,0 +1,6 @@
+@TrichXuatWeb_HostAddress = http://localhost:5261
+
+GET {{TrichXuatWeb_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
