@@ -14,17 +14,17 @@
 
 ### Backend (`/be` folder)
 
-1. **Clone** dự án về máy:
+1 **Clone** dự án về máy:
    ```bash
    git clone https://github.com/vudinhdangkhoa/trichXuatWeb
-   
-2. Mở thư mục `be` bằng Visual Studio Code.
+   ```
+2 Mở thư mục `be` bằng Visual Studio Code.
 
-3. Mở terminal tại thư mục `be` và chạy lệnh sau:
+3 Mở terminal tại thư mục `be` và chạy lệnh sau:
    ```bash
    dotnet watch run --no-hot-reload
-
-4.Sau khi chạy thành công, trình duyệt sẽ mở giao diện Swagger UI của Web API để bạn kiểm thử các endpoint.
+   ```
+4 Sau khi chạy thành công, trình duyệt sẽ mở giao diện Swagger UI của Web API để kiểm thử các endpoint.
 
 ### Frontend (`/fe` folder)
 1 Mở một cửa sổ VS Code mới và mở thư mục fe.
