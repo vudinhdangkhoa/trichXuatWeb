@@ -1,3 +1,45 @@
-Môi trường cần có để chạy dự án: .NET 8, Node.js 22+ và npm
-Sau khi clone code về mở dự án trên Visual Studio Code và cd đến thư mục be(Backend) sau đó mở terminal và chạy lệnh "dotnet watch run --no-hot-reload" nó sẽ hiện lên trang giao diện Swagger UI của Web API
-Kế tiếp mở thêm một cửa sổ Visual Studio Code và mở thư mục fe (Frontend) của dự án và chạy lệnh "npm i" trên terminal ở chế độ cmd để cài đặt các dependencies và kế tiếp chạy lệnh "npm start" cũn ở chế độ cmd để chạy web
+# Hệ thống trích xuất nội dung trang web
+
+> Hệ thống dùng backend là .NET 8 để để xử lý yêu cầu phía server và frontend là ReactJS để làm phần giao diện. Khi người dùng nhập đường link của trang web vào ô input trong giao diện và bấm gửi nó sẽ gửi request tới server và server sẽ xử lý và gửi về số lượng thành phần nội dung của trang web theo đường link đó
+
+##  Yêu cầu môi trường
+
+Để chạy được dự án cần cài đặt sẵn trên máy:
+
+- [.NET SDK 8.0](https://dotnet.microsoft.com/download)
+- [Node.js 22+](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+
+##  Hướng dẫn chạy dự án
+
+### Backend (`/be` folder)
+
+1. **Clone** dự án về máy:
+   ```bash
+   git clone https://github.com/vudinhdangkhoa/trichXuatWeb
+   
+2. Mở thư mục `be` bằng Visual Studio Code.
+
+3. Mở terminal tại thư mục `be` và chạy lệnh sau:
+   ```bash
+   dotnet watch run --no-hot-reload
+
+4.Sau khi chạy thành công, trình duyệt sẽ mở giao diện Swagger UI của Web API để bạn kiểm thử các endpoint.
+
+### Frontend (`/fe` folder)
+1 Mở một cửa sổ VS Code mới và mở thư mục fe.
+
+2 Mở terminal (chế độ Command Prompt - CMD) và chạy lệnh:
+  ```bash
+  npm i
+```
+để cài đặt các dependencies.
+
+3 Tiếp theo, chạy:
+  ```bash
+  npm start
+  ```
+để khởi động frontend. Ứng dụng web sẽ được mở trong trình duyệt mặc định .
+
+
+
