@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrichXuatWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cee27fc17b139769126be5bca10aff7b96982841")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrichXuatWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrichXuatWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

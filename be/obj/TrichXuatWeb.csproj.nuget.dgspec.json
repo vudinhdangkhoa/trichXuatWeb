@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\hoc\\ThucTap\\TrichXuatWeb\\TrichXuatWeb.csproj": {}
+    "D:\\hoc\\ThucTap\\BaiTapTrichXuatWeb\\be\\TrichXuatWeb.csproj": {}
   },
   "projects": {
-    "D:\\hoc\\ThucTap\\TrichXuatWeb\\TrichXuatWeb.csproj": {
+    "D:\\hoc\\ThucTap\\BaiTapTrichXuatWeb\\be\\TrichXuatWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\hoc\\ThucTap\\TrichXuatWeb\\TrichXuatWeb.csproj",
+        "projectUniqueName": "D:\\hoc\\ThucTap\\BaiTapTrichXuatWeb\\be\\TrichXuatWeb.csproj",
         "projectName": "TrichXuatWeb",
-        "projectPath": "D:\\hoc\\ThucTap\\TrichXuatWeb\\TrichXuatWeb.csproj",
+        "projectPath": "D:\\hoc\\ThucTap\\BaiTapTrichXuatWeb\\be\\TrichXuatWeb.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\hoc\\ThucTap\\TrichXuatWeb\\obj\\",
+        "outputPath": "D:\\hoc\\ThucTap\\BaiTapTrichXuatWeb\\be\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

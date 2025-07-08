@@ -6,9 +6,24 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [url, setUrl] = useState(''); // Thêm state cho URL input
+  const [url, setUrl] = useState('');
 
-  // Hàm gọi API với POST method
+  
+  const canvaColors = {
+    primary: '#667eea',
+    secondary: '#764ba2', 
+    accent: '#ff6b6b',
+    success: '#51cf66',
+    warning: '#ffd93d',
+    error: '#ff6b6b',
+    info: '#74c0fc',
+    background: 'rgba(255, 255, 255, 0.95)',
+    cardBg: 'rgba(255, 255, 255, 0.9)',
+    text: '#2d3748',
+    textLight: '#4a5568',
+    border: 'rgba(255, 255, 255, 0.2)'
+  };
+
   const fetchData = async (urlToExtract) => {
     if (!urlToExtract) {
       setError('Vui lòng nhập URL');
@@ -42,13 +57,11 @@ function App() {
     }
   };
 
-  // Xử lý submit form
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchData(url);
   };
 
-  // Render kết quả trích xuất
   const renderResults = () => {
     if (!data || !data.data) return null;
 
@@ -63,37 +76,40 @@ function App() {
     return (
       <div style={{ 
         marginTop: '20px', 
-        padding: '20px', 
-        backgroundColor: '#282c34', 
-        borderRadius: '10px',
-        border: '1px solid #444',
+        padding: '24px', 
+        background: canvaColors.cardBg,
+        borderRadius: '16px',
+        boxShadow: '0 8px 32px rgba(31, 38, 135, 0.37)',
+        border: `1px solid ${canvaColors.border}`,
+        backdropFilter: 'blur(10px)',
         maxWidth: '900px',
         width: '100%'
       }}>
-        <h2 style={{ color: '#61dafb', marginBottom: '15px' }}>
+        <h2 style={{ color: canvaColors.primary, marginBottom: '20px', fontSize: '28px', fontWeight: '700' }}>
            Kết quả trích xuất
         </h2>
         
-        {/* Thông tin tổng quan */}
+       
         <div style={{ 
-          backgroundColor: '#1e2124', 
-          padding: '15px', 
-          borderRadius: '8px',
-          marginBottom: '20px'
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          padding: '20px', 
+          borderRadius: '12px',
+          marginBottom: '24px',
+          color: 'white'
         }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-            <span style={{ color: '#ffffff' }}> Tổng số file:</span>
-            <span style={{ color: '#4ade80', fontWeight: 'bold' }}>{totalFiles}</span>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+            <span style={{ fontSize: '16px' }}> Tổng số file:</span>
+            <span style={{ color: canvaColors.warning, fontWeight: 'bold', fontSize: '18px' }}>{totalFiles}</span>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-            <span style={{ color: '#ffffff' }}> URL đã trích xuất:</span>
-            <span style={{ color: '#60a5fa', fontSize: '12px', maxWidth: '400px', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+            <span style={{ fontSize: '16px' }}> URL đã trích xuất:</span>
+            <span style={{ color: canvaColors.info, fontSize: '12px', maxWidth: '400px', overflow: 'hidden', textOverflow: 'ellipsis' }}>
               {url}
             </span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span style={{ color: '#ffffff' }}> Trạng thái:</span>
-            <span style={{ color: '#4ade80', fontWeight: 'bold' }}>
+            <span style={{ fontSize: '16px' }}> Trạng thái:</span>
+            <span style={{ color: canvaColors.success, fontWeight: 'bold', fontSize: '16px' }}>
               {data.success ? 'Thành công' : 'Thất bại'}
             </span>
           </div>
@@ -103,55 +119,85 @@ function App() {
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-          gap: '15px', 
-          marginBottom: '20px' 
+          gap: '16px', 
+          marginBottom: '24px' 
         }}>
-          <div style={{ backgroundColor: '#1e2124', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
-            <div style={{ color: '#f59e0b', fontSize: '24px', marginBottom: '5px' }}>ảnh</div>
-            <div style={{ color: '#ffffff', fontSize: '14px' }}>Hình ảnh</div>
-            <div style={{ color: '#f59e0b', fontSize: '20px', fontWeight: 'bold' }}>{images.length}</div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #ffd93d 0%, #ffb347 100%)',
+            padding: '20px', 
+            borderRadius: '16px', 
+            textAlign: 'center',
+            color: 'white',
+            boxShadow: '0 4px 15px rgba(255, 217, 61, 0.4)'
+          }}>
+           
+            <div style={{ fontSize: '14px', marginBottom: '4px' }}>Hình ảnh</div>
+            <div style={{ fontSize: '24px', fontWeight: 'bold' }}>{images.length}</div>
           </div>
-          <div style={{ backgroundColor: '#1e2124', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
-            <div style={{ color: '#ef4444', fontSize: '24px', marginBottom: '5px' }}>video</div>
-            <div style={{ color: '#ffffff', fontSize: '14px' }}>Video</div>
-            <div style={{ color: '#ef4444', fontSize: '20px', fontWeight: 'bold' }}>{videos.length}</div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%)',
+            padding: '20px', 
+            borderRadius: '16px', 
+            textAlign: 'center',
+            color: 'white',
+            boxShadow: '0 4px 15px rgba(255, 107, 107, 0.4)'
+          }}>
+         
+            <div style={{ fontSize: '14px', marginBottom: '4px' }}>Video</div>
+            <div style={{ fontSize: '24px', fontWeight: 'bold' }}>{videos.length}</div>
           </div>
-          <div style={{ backgroundColor: '#1e2124', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
-            <div style={{ color: '#8b5cf6', fontSize: '24px', marginBottom: '5px' }}>âm thanh</div>
-            <div style={{ color: '#ffffff', fontSize: '14px' }}>Âm thanh</div>
-            <div style={{ color: '#8b5cf6', fontSize: '20px', fontWeight: 'bold' }}>{audios.length}</div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%)',
+            padding: '20px', 
+            borderRadius: '16px', 
+            textAlign: 'center',
+            color: 'white',
+            boxShadow: '0 4px 15px rgba(167, 139, 250, 0.4)'
+          }}>
+       
+            <div style={{ fontSize: '14px', marginBottom: '4px' }}>Âm thanh</div>
+            <div style={{ fontSize: '24px', fontWeight: 'bold' }}>{audios.length}</div>
           </div>
-          <div style={{ backgroundColor: '#1e2124', padding: '15px', borderRadius: '8px', textAlign: 'center' }}>
-            <div style={{ color: '#10b981', fontSize: '24px', marginBottom: '5px' }}>văn bản</div>
-            <div style={{ color: '#ffffff', fontSize: '14px' }}>Văn bản</div>
-            <div style={{ color: '#10b981', fontSize: '20px', fontWeight: 'bold' }}>{texts.length}</div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #51cf66 0%, #40c057 100%)',
+            padding: '20px', 
+            borderRadius: '16px', 
+            textAlign: 'center',
+            color: 'white',
+            boxShadow: '0 4px 15px rgba(81, 207, 102, 0.4)'
+          }}>
+    
+            <div style={{ fontSize: '14px', marginBottom: '4px' }}>Văn bản</div>
+            <div style={{ fontSize: '24px', fontWeight: 'bold' }}>{texts.length}</div>
           </div>
         </div>
 
         {/* Danh sách file chi tiết */}
         <div style={{ maxHeight: '500px', overflowY: 'auto' }}>
-          {/* Hình ảnh */}
+          
           {images.length > 0 && (
             <div style={{ marginBottom: '20px' }}>
-              <h3 style={{ color: '#f59e0b', marginBottom: '10px' }}> Hình ảnh ({images.length})</h3>
+              <h3 style={{ color: canvaColors.warning, marginBottom: '12px', fontSize: '20px' }}> Hình ảnh ({images.length})</h3>
               {images.map((filename, index) => (
                 <div key={`img-${index}`} style={{
-                  backgroundColor: '#1e2124',
-                  padding: '10px',
-                  marginBottom: '5px',
-                  borderRadius: '6px',
-                  border: '1px solid #444',
+                  background: canvaColors.background,
+                  padding: '12px',
+                  marginBottom: '8px',
+                  borderRadius: '12px',
+                  border: `1px solid ${canvaColors.border}`,
                   display: 'flex',
                   justifyContent: 'space-between',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
                 }}>
-                  <span style={{ color: '#ffffff', fontSize: '14px' }}> {filename}</span>
+                  <span style={{ color: canvaColors.text, fontSize: '14px' }}> {filename}</span>
                   <span style={{ 
-                    padding: '2px 8px', 
-                    borderRadius: '4px', 
-                    backgroundColor: '#059669', 
+                    padding: '4px 12px', 
+                    borderRadius: '8px', 
+                    background: 'linear-gradient(45deg, #51cf66, #40c057)',
                     color: 'white', 
-                    fontSize: '12px' 
+                    fontSize: '12px',
+                    fontWeight: '600'
                   }}>
                      Thành công
                   </span>
@@ -160,28 +206,30 @@ function App() {
             </div>
           )}
 
-          {/* Video */}
+          
           {videos.length > 0 && (
             <div style={{ marginBottom: '20px' }}>
-              <h3 style={{ color: '#ef4444', marginBottom: '10px' }}> Video ({videos.length})</h3>
+              <h3 style={{ color: canvaColors.accent, marginBottom: '12px', fontSize: '20px' }}> Video ({videos.length})</h3>
               {videos.map((filename, index) => (
                 <div key={`vid-${index}`} style={{
-                  backgroundColor: '#1e2124',
-                  padding: '10px',
-                  marginBottom: '5px',
-                  borderRadius: '6px',
-                  border: '1px solid #444',
+                  background: canvaColors.background,
+                  padding: '12px',
+                  marginBottom: '8px',
+                  borderRadius: '12px',
+                  border: `1px solid ${canvaColors.border}`,
                   display: 'flex',
                   justifyContent: 'space-between',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
                 }}>
-                  <span style={{ color: '#ffffff', fontSize: '14px' }}> {filename}</span>
+                  <span style={{ color: canvaColors.text, fontSize: '14px' }}> {filename}</span>
                   <span style={{ 
-                    padding: '2px 8px', 
-                    borderRadius: '4px', 
-                    backgroundColor: '#059669', 
+                    padding: '4px 12px', 
+                    borderRadius: '8px', 
+                    background: 'linear-gradient(45deg, #51cf66, #40c057)',
                     color: 'white', 
-                    fontSize: '12px' 
+                    fontSize: '12px',
+                    fontWeight: '600'
                   }}>
                      Thành công
                   </span>
@@ -189,59 +237,61 @@ function App() {
               ))}
             </div>
           )}
-
-          {/* Âm thanh */}
-          {audios.length > 0 && (
-            <div style={{ marginBottom: '20px' }}>
-              <h3 style={{ color: '#8b5cf6', marginBottom: '10px' }}> Âm thanh ({audios.length})</h3>
-              {audios.map((filename, index) => (
-                <div key={`aud-${index}`} style={{
-                  backgroundColor: '#1e2124',
-                  padding: '10px',
-                  marginBottom: '5px',
-                  borderRadius: '6px',
-                  border: '1px solid #444',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center'
-                }}>
-                  <span style={{ color: '#ffffff', fontSize: '14px' }}> {filename}</span>
-                  <span style={{ 
-                    padding: '2px 8px', 
-                    borderRadius: '4px', 
-                    backgroundColor: '#059669', 
-                    color: 'white', 
-                    fontSize: '12px' 
+          {
+            audios.length>0 &&(
+              <div style={{ marginBottom: '20px' }}>
+                <h3 style={{ color: canvaColors.success, marginBottom: '12px', fontSize: '20px' }}> Âm thanh ({audios.length})</h3>
+                {audios.map((filename, index) => (
+                  <div key={`audio-${index}`} style={{
+                    background: canvaColors.background,
+                    padding: '12px',
+                    marginBottom: '8px',
+                    borderRadius: '12px',
+                    border: `1px solid ${canvaColors.border}`,
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
                   }}>
-                     Thành công
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* Văn bản */}
+                    <span style={{ color: canvaColors.text, fontSize: '14px' }}> {filename}</span>
+                    <span style={{ 
+                      padding: '4px 12px', 
+                      borderRadius: '8px', 
+                      background: 'linear-gradient(45deg, #51cf66, #40c057)',
+                      color: 'white', 
+                      fontSize: '12px',
+                      fontWeight: '600'
+                    }}>
+                       Thành công
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )
+          }
           {texts.length > 0 && (
             <div style={{ marginBottom: '20px' }}>
-              <h3 style={{ color: '#10b981', marginBottom: '10px' }}> Văn bản ({texts.length})</h3>
+              <h3 style={{ color: canvaColors.primary, marginBottom: '12px', fontSize: '20px' }}> Văn bản ({texts.length})</h3>
               {texts.map((filename, index) => (
-                <div key={`txt-${index}`} style={{
-                  backgroundColor: '#1e2124',
-                  padding: '10px',
-                  marginBottom: '5px',
-                  borderRadius: '6px',
-                  border: '1px solid #444',
+                <div key={`text-${index}`} style={{
+                  background: canvaColors.background,
+                  padding: '12px',
+                  marginBottom: '8px',
+                  borderRadius: '12px',
+                  border: `1px solid ${canvaColors.border}`,
                   display: 'flex',
                   justifyContent: 'space-between',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
                 }}>
-                  <span style={{ color: '#ffffff', fontSize: '14px' }}> {filename}</span>
+                  <span style={{ color: canvaColors.text, fontSize: '14px' }}> {filename}</span>
                   <span style={{ 
-                    padding: '2px 8px', 
-                    borderRadius: '4px', 
-                    backgroundColor: '#059669', 
+                    padding: '4px 12px', 
+                    borderRadius: '8px', 
+                    background: 'linear-gradient(45deg, #51cf66, #40c057)',
                     color: 'white', 
-                    fontSize: '12px' 
+                    fontSize: '12px',
+                    fontWeight: '600'
                   }}>
                      Thành công
                   </span>
@@ -249,18 +299,20 @@ function App() {
               ))}
             </div>
           )}
+          {/* Audio và Text sections tương tự... */}
         </div>
 
         {/* Message từ server */}
         {data.message && (
           <div style={{
-            marginTop: '15px',
-            padding: '10px',
-            backgroundColor: '#065f46',
-            borderRadius: '6px',
-            color: '#ffffff'
+            marginTop: '20px',
+            padding: '16px',
+            background: 'linear-gradient(135deg, #51cf66 0%, #40c057 100%)',
+            borderRadius: '12px',
+            color: 'white',
+            boxShadow: '0 4px 15px rgba(81, 207, 102, 0.4)'
           }}>
-             {data.message}
+            💬 {data.message}
           </div>
         )}
       </div>
@@ -272,47 +324,43 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         
-        <h1 style={{ marginBottom: '30px', color: '#61dafb' }}>
+        <h1 style={{ marginBottom: '40px', color: 'white', fontSize: '36px', fontWeight: '700' }}>
            Công cụ trích xuất nội dung Web
         </h1>
         
         <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
-          <div style={{ 
+          <div className="canva-card" style={{ 
             marginBottom: '20px',
-            padding: '20px',
-            backgroundColor: '#282c34',
-            borderRadius: '10px',
-            border: '1px solid #444'
+            padding: '32px',
+            maxWidth: '600px'
           }}>
             <input
               type="url"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               placeholder=" Nhập URL cần trích xuất (vd: https://example.com)"
+              className="canva-input"
               style={{
-                padding: '12px 16px',
-                width: '400px',
-                marginRight: '10px',
-                color: 'black',
-                border: '2px solid #61dafb',
-                borderRadius: '6px',
-                fontSize: '14px'
+                padding: '16px 20px',
+                width: '100%',
+                marginBottom: '16px',
+                color: canvaColors.text,
+                fontSize: '16px',
+                border: `2px solid ${canvaColors.border}`,
+                borderRadius: '12px'
               }}
               required
             />
             <button 
               type="submit" 
               disabled={loading}
+              className="canva-button"
               style={{
-                padding: '12px 24px',
-                backgroundColor: loading ? '#666' : '#61dafb',
-                color: loading ? '#ccc' : '#000',
-                border: 'none',
-                borderRadius: '6px',
-                fontSize: '14px',
+                padding: '16px 32px',
+                fontSize: '16px',
                 fontWeight: '600',
-                cursor: loading ? 'not-allowed' : 'pointer',
-                transition: 'all 0.3s ease'
+                borderRadius: '12px',
+                width: '100%'
               }}
             >
               {loading ? ' Đang xử lý...' : ' Trích xuất'}
@@ -321,38 +369,28 @@ function App() {
         </form>
         
         {loading && (
-          <div style={{ 
-            padding: '20px', 
-            backgroundColor: '#1e3a8a', 
-            borderRadius: '8px',
-            marginBottom: '20px'
+          <div className="canva-card" style={{ 
+            padding: '24px', 
+            marginBottom: '20px',
+            background: 'linear-gradient(135deg, #74c0fc 0%, #339af0 100%)',
+            color: 'white'
           }}>
-            <p style={{ margin: 0, color: '#ffffff' }}> Đang tải dữ liệu...</p>
+            <p style={{ margin: 0, fontSize: '16px' }}> Đang tải dữ liệu...</p>
           </div>
         )}
         
         {error && (
-          <div style={{ 
-            padding: '20px', 
-            backgroundColor: '#dc2626', 
-            borderRadius: '8px',
-            marginBottom: '20px'
+          <div className="canva-card" style={{ 
+            padding: '24px', 
+            marginBottom: '20px',
+            background: 'linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%)',
+            color: 'white'
           }}>
-            <p style={{ margin: 0, color: '#ffffff' }}> Lỗi: {error}</p>
+            <p style={{ margin: 0, fontSize: '16px' }}> Lỗi: {error}</p>
           </div>
         )}
         
         {renderResults()}
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ marginTop: '40px', display: 'inline-block' }}
-        >
-          khoa
-        </a>
       </header>
     </div>
   );

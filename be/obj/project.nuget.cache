@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UyZVhdNjC5Y=",
+  "dgSpecHash": "Z5Up1DyzZTk=",
   "success": true,
-  "projectFilePath": "D:\\hoc\\ThucTap\\TrichXuatWeb\\TrichXuatWeb.csproj",
+  "projectFilePath": "D:\\hoc\\ThucTap\\BaiTapTrichXuatWeb\\be\\TrichXuatWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\htmlagilitypack\\1.6.13\\htmlagilitypack.1.6.13.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.14\\microsoft.aspnetcore.openapi.8.0.14.nupkg.sha512",
